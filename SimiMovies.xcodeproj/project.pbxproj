@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		97EFFC0B1FF385EB00F67786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFFC0A1FF385EB00F67786 /* AppDelegate.swift */; };
+		97EFFC0D1FF385EB00F67786 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFFC0C1FF385EB00F67786 /* ViewController.swift */; };
+		97EFFC101FF385EB00F67786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EFFC0E1FF385EB00F67786 /* Main.storyboard */; };
+		97EFFC121FF385EB00F67786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97EFFC111FF385EB00F67786 /* Assets.xcassets */; };
+		97EFFC151FF385EB00F67786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EFFC131FF385EB00F67786 /* LaunchScreen.storyboard */; };
+		97EFFC201FF385EB00F67786 /* SimiMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFFC1F1FF385EB00F67786 /* SimiMoviesTests.swift */; };
+		97EFFC2B1FF385EB00F67786 /* SimiMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFFC2A1FF385EB00F67786 /* SimiMoviesUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		97EFFC1C1FF385EB00F67786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97EFFBFF1FF385EA00F67786 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97EFFC061FF385EB00F67786;
+			remoteInfo = SimiMovies;
+		};
+		97EFFC271FF385EB00F67786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97EFFBFF1FF385EA00F67786 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 97EFFC061FF385EB00F67786;
+			remoteInfo = SimiMovies;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		97EFFC071FF385EB00F67786 /* SimiMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimiMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97EFFC0A1FF385EB00F67786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		97EFFC0C1FF385EB00F67786 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		97EFFC0F1FF385EB00F67786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		97EFFC111FF385EB00F67786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97EFFC141FF385EB00F67786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		97EFFC161FF385EB00F67786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97EFFC1B1FF385EB00F67786 /* SimiMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimiMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		97EFFC1F1FF385EB00F67786 /* SimiMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimiMoviesTests.swift; sourceTree = "<group>"; };
+		97EFFC211FF385EB00F67786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97EFFC261FF385EB00F67786 /* SimiMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimiMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		97EFFC2A1FF385EB00F67786 /* SimiMoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimiMoviesUITests.swift; sourceTree = "<group>"; };
+		97EFFC2C1FF385EB00F67786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97EFFC041FF385EB00F67786 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97EFFC181FF385EB00F67786 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97EFFC231FF385EB00F67786 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		97EFFBFE1FF385EA00F67786 = {
+			isa = PBXGroup;
+			children = (
+				97EFFC091FF385EB00F67786 /* SimiMovies */,
+				97EFFC1E1FF385EB00F67786 /* SimiMoviesTests */,
+				97EFFC291FF385EB00F67786 /* SimiMoviesUITests */,
+				97EFFC081FF385EB00F67786 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		97EFFC081FF385EB00F67786 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97EFFC071FF385EB00F67786 /* SimiMovies.app */,
+				97EFFC1B1FF385EB00F67786 /* SimiMoviesTests.xctest */,
+				97EFFC261FF385EB00F67786 /* SimiMoviesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97EFFC091FF385EB00F67786 /* SimiMovies */ = {
+			isa = PBXGroup;
+			children = (
+				97EFFC0A1FF385EB00F67786 /* AppDelegate.swift */,
+				97EFFC0C1FF385EB00F67786 /* ViewController.swift */,
+				97EFFC0E1FF385EB00F67786 /* Main.storyboard */,
+				97EFFC111FF385EB00F67786 /* Assets.xcassets */,
+				97EFFC131FF385EB00F67786 /* LaunchScreen.storyboard */,
+				97EFFC161FF385EB00F67786 /* Info.plist */,
+			);
+			path = SimiMovies;
+			sourceTree = "<group>";
+		};
+		97EFFC1E1FF385EB00F67786 /* SimiMoviesTests */ = {
+			isa = PBXGroup;
+			children = (
+				97EFFC1F1FF385EB00F67786 /* SimiMoviesTests.swift */,
+				97EFFC211FF385EB00F67786 /* Info.plist */,
+			);
+			path = SimiMoviesTests;
+			sourceTree = "<group>";
+		};
+		97EFFC291FF385EB00F67786 /* SimiMoviesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				97EFFC2A1FF385EB00F67786 /* SimiMoviesUITests.swift */,
+				97EFFC2C1FF385EB00F67786 /* Info.plist */,
+			);
+			path = SimiMoviesUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97EFFC061FF385EB00F67786 /* SimiMovies */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97EFFC2F1FF385EB00F67786 /* Build configuration list for PBXNativeTarget "SimiMovies" */;
+			buildPhases = (
+				97EFFC031FF385EB00F67786 /* Sources */,
+				97EFFC041FF385EB00F67786 /* Frameworks */,
+				97EFFC051FF385EB00F67786 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimiMovies;
+			productName = SimiMovies;
+			productReference = 97EFFC071FF385EB00F67786 /* SimiMovies.app */;
+			productType = "com.apple.product-type.application";
+		};
+		97EFFC1A1FF385EB00F67786 /* SimiMoviesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97EFFC321FF385EB00F67786 /* Build configuration list for PBXNativeTarget "SimiMoviesTests" */;
+			buildPhases = (
+				97EFFC171FF385EB00F67786 /* Sources */,
+				97EFFC181FF385EB00F67786 /* Frameworks */,
+				97EFFC191FF385EB00F67786 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97EFFC1D1FF385EB00F67786 /* PBXTargetDependency */,
+			);
+			name = SimiMoviesTests;
+			productName = SimiMoviesTests;
+			productReference = 97EFFC1B1FF385EB00F67786 /* SimiMoviesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		97EFFC251FF385EB00F67786 /* SimiMoviesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97EFFC351FF385EB00F67786 /* Build configuration list for PBXNativeTarget "SimiMoviesUITests" */;
+			buildPhases = (
+				97EFFC221FF385EB00F67786 /* Sources */,
+				97EFFC231FF385EB00F67786 /* Frameworks */,
+				97EFFC241FF385EB00F67786 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				97EFFC281FF385EB00F67786 /* PBXTargetDependency */,
+			);
+			name = SimiMoviesUITests;
+			productName = SimiMoviesUITests;
+			productReference = 97EFFC261FF385EB00F67786 /* SimiMoviesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97EFFBFF1FF385EA00F67786 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Karrui Lau";
+				TargetAttributes = {
+					97EFFC061FF385EB00F67786 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					97EFFC1A1FF385EB00F67786 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 97EFFC061FF385EB00F67786;
+					};
+					97EFFC251FF385EB00F67786 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 97EFFC061FF385EB00F67786;
+					};
+				};
+			};
+			buildConfigurationList = 97EFFC021FF385EA00F67786 /* Build configuration list for PBXProject "SimiMovies" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 97EFFBFE1FF385EA00F67786;
+			productRefGroup = 97EFFC081FF385EB00F67786 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				97EFFC061FF385EB00F67786 /* SimiMovies */,
+				97EFFC1A1FF385EB00F67786 /* SimiMoviesTests */,
+				97EFFC251FF385EB00F67786 /* SimiMoviesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97EFFC051FF385EB00F67786 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97EFFC151FF385EB00F67786 /* LaunchScreen.storyboard in Resources */,
+				97EFFC121FF385EB00F67786 /* Assets.xcassets in Resources */,
+				97EFFC101FF385EB00F67786 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97EFFC191FF385EB00F67786 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97EFFC241FF385EB00F67786 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97EFFC031FF385EB00F67786 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97EFFC0D1FF385EB00F67786 /* ViewController.swift in Sources */,
+				97EFFC0B1FF385EB00F67786 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97EFFC171FF385EB00F67786 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97EFFC201FF385EB00F67786 /* SimiMoviesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97EFFC221FF385EB00F67786 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97EFFC2B1FF385EB00F67786 /* SimiMoviesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		97EFFC1D1FF385EB00F67786 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97EFFC061FF385EB00F67786 /* SimiMovies */;
+			targetProxy = 97EFFC1C1FF385EB00F67786 /* PBXContainerItemProxy */;
+		};
+		97EFFC281FF385EB00F67786 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 97EFFC061FF385EB00F67786 /* SimiMovies */;
+			targetProxy = 97EFFC271FF385EB00F67786 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		97EFFC0E1FF385EB00F67786 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97EFFC0F1FF385EB00F67786 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		97EFFC131FF385EB00F67786 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				97EFFC141FF385EB00F67786 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		97EFFC2D1FF385EB00F67786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		97EFFC2E1FF385EB00F67786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		97EFFC301FF385EB00F67786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH2EF8NL6A;
+				INFOPLIST_FILE = SimiMovies/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.karrui.SimiMovies;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		97EFFC311FF385EB00F67786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH2EF8NL6A;
+				INFOPLIST_FILE = SimiMovies/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.karrui.SimiMovies;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		97EFFC331FF385EB00F67786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH2EF8NL6A;
+				INFOPLIST_FILE = SimiMoviesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.karrui.SimiMoviesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimiMovies.app/SimiMovies";
+			};
+			name = Debug;
+		};
+		97EFFC341FF385EB00F67786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH2EF8NL6A;
+				INFOPLIST_FILE = SimiMoviesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.karrui.SimiMoviesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimiMovies.app/SimiMovies";
+			};
+			name = Release;
+		};
+		97EFFC361FF385EB00F67786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH2EF8NL6A;
+				INFOPLIST_FILE = SimiMoviesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.karrui.SimiMoviesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimiMovies;
+			};
+			name = Debug;
+		};
+		97EFFC371FF385EB00F67786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH2EF8NL6A;
+				INFOPLIST_FILE = SimiMoviesUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.karrui.SimiMoviesUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimiMovies;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97EFFC021FF385EA00F67786 /* Build configuration list for PBXProject "SimiMovies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97EFFC2D1FF385EB00F67786 /* Debug */,
+				97EFFC2E1FF385EB00F67786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97EFFC2F1FF385EB00F67786 /* Build configuration list for PBXNativeTarget "SimiMovies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97EFFC301FF385EB00F67786 /* Debug */,
+				97EFFC311FF385EB00F67786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97EFFC321FF385EB00F67786 /* Build configuration list for PBXNativeTarget "SimiMoviesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97EFFC331FF385EB00F67786 /* Debug */,
+				97EFFC341FF385EB00F67786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97EFFC351FF385EB00F67786 /* Build configuration list for PBXNativeTarget "SimiMoviesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97EFFC361FF385EB00F67786 /* Debug */,
+				97EFFC371FF385EB00F67786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97EFFBFF1FF385EA00F67786 /* Project object */;
+}
