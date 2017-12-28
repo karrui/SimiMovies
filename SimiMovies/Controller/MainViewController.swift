@@ -7,9 +7,12 @@
 //
 
 import UIKit
-import McPicker
 import Alamofire
 import SwiftyJSON
+import SwiftyPickerPopover
+
+// Global variable
+var moviesDataModel = MoviesDataModel()
 
 class ViewController: UIViewController {
     
@@ -17,7 +20,7 @@ class ViewController: UIViewController {
     let MOVIE_INFO_URL = "https://karrui.github.io/movieinfo"
     
     // Instance variables
-    var moviesDataModel = MoviesDataModel()
+    var selectedMovieID: Int = 0
     
     @IBOutlet weak var moviePicker: UIButton!
     @IBOutlet weak var cinemaPicker: UIButton!
@@ -25,6 +28,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        getMoviesInfo(url: MOVIE_INFO_URL)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,12 +38,21 @@ class ViewController: UIViewController {
     
     
     @IBAction func moviePickerPressed(_ sender: Any) {
-        getMoviesInfo(url: MOVIE_INFO_URL)
         showPopupMoviePicker()
     }
     
     func showPopupMoviePicker() {
-        
+        let p = StringPickerPopover(title: "Choose a movie", choices: moviesDataModel.movieTitleArray)
+            .setDoneButton(
+                action: {  popover, selectedRow, selectedString in
+                    print("done row \(selectedRow) \(selectedString)")
+                    self.moviePicker.setTitle(selectedString, for: .normal)
+                    self.selectedMovieID = moviesDataModel.moviesDictionary[selectedString]!.id
+                    print(self.selectedMovieID)
+            })
+            .setCancelButton(action: {_, _, _ in
+                print("cancel") })
+        p.appear(originView: moviePicker, baseViewController: self)
     }
     
     func getMoviesInfo(url: String) {
@@ -62,18 +75,15 @@ class ViewController: UIViewController {
             var movieJSON = json[i]
             if movieJSON != JSON.null {
                 let movieTitle = movieJSON["title"].stringValue
-                if movieTitle.isEmpty { // ignore cases where scraper gets empty strings
-                    continue
-                }
                 let movie = Movie(id: movieJSON["id"].intValue, title: movieTitle, language: movieJSON["language"].stringValue, ageRating: movieJSON["ageRating"].stringValue, duration: movieJSON["duration"].intValue)
                 moviesDataModel.moviesArray.append(movie)
+                moviesDataModel.moviesDictionary[movieTitle] = movie
                 i += 1
-                
-                print(movie.title)
             } else {
                 break
             }
         }
+        moviesDataModel.addTitlesToArray()
     }
     
 }

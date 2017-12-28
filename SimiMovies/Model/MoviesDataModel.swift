@@ -10,5 +10,14 @@ import UIKit
 
 class MoviesDataModel {
     var moviesArray = [Movie]()
+    var movieTitleArray = [String]()
+    var moviesDictionary = [String: Movie]()
+    
+    
+    func addTitlesToArray() {
+        for movie in moviesArray {
+            movieTitleArray.append(movie.title)
+        }
+    }
 }
 

@@ -6,9 +6,9 @@ target 'SimiMovies' do
   use_frameworks!
 
   # Pods for SimiMovies
-  pod 'McPicker'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'SwiftyPickerPopover', :git => 'https://github.com/hsylife/SwiftyPickerPopover', :branch => 'swift4'
 
   target 'SimiMoviesTests' do
     inherit! :search_paths
