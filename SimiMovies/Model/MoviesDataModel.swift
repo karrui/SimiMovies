@@ -12,6 +12,7 @@ class MoviesDataModel {
     var moviesArray = [Movie]()
     var movieTitleArray = [String]()
     var moviesDictionary = [String: Movie]()
+    var cinemasArray = [String]()
     
     
     func addTitlesToArray() {
