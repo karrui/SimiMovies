@@ -1,0 +1,6 @@
+framework module Pods_SimiMoviesUITests {
+  umbrella header "Pods-SimiMoviesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
