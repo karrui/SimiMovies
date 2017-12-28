@@ -8,16 +8,17 @@
 
 import UIKit
 import McPicker
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
     
-    let data: [[String]] = [
-        ["Today", "Tomorrow", "Day after"]
-    ]
+    // Constants
+    let MOVIE_INFO_URL = "https://karrui.github.io/movieinfo"
     
-    var datePicked = Date()
+    // Instance variables
+    var moviesDataModel = MoviesDataModel()
     
-    @IBOutlet weak var datePicker: UIButton!
     @IBOutlet weak var moviePicker: UIButton!
     @IBOutlet weak var cinemaPicker: UIButton!
 
@@ -30,32 +31,49 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func datePickerPressed(_ sender: UIButton) {
-        let flexibleSpace = McPickerBarButtonItem.flexibleSpace()
-        let mcPicker = McPicker(data: data)
-        mcPicker.setToolbarItems(items: [flexibleSpace])
-        McPicker.showAsPopover(data:data, fromViewController: self, sourceView: sender, cancelHandler: { () -> Void in
-            
-            print("Canceled Popover")
-            
-        }, doneHandler: { (selections: [Int : String]) -> Void in
-            
-            print("Done with Popover")
-            if let name = selections[0] {
-                self.datePicker.setTitle(name, for: .normal)
-                
-                if name == "Today" {
-                    self.datePicked = Date()
-                } else if name == "Tomorrow" {
-                    self.datePicked = Date(timeIntervalSinceNow: 86400)
-                } else {
-                    self.datePicked = Date(timeIntervalSinceNow: 172800)
-                }
-            }
-        })
+    
+    
+    @IBAction func moviePickerPressed(_ sender: Any) {
+        getMoviesInfo(url: MOVIE_INFO_URL)
+        showPopupMoviePicker()
+    }
+    
+    func showPopupMoviePicker() {
         
-        print(datePicked)
+    }
+    
+    func getMoviesInfo(url: String) {
+        Alamofire.request(url, method: .get).responseJSON {
+            response in
+            if response.result.isSuccess {
+                print("Retrieved response")
+                let moviesInfoJSON: JSON = JSON(response.result.value!)
+                self.updateMoviesData(json: moviesInfoJSON)
+            } else {
+                print("Connection issues")
+            }
+        }
+    }
+    
+    func updateMoviesData(json: JSON) {
+        var i: Int = 0
+        
+        while true {
+            var movieJSON = json[i]
+            if movieJSON != JSON.null {
+                let movieTitle = movieJSON["title"].stringValue
+                if movieTitle.isEmpty { // ignore cases where scraper gets empty strings
+                    continue
+                }
+                let movie = Movie(id: movieJSON["id"].intValue, title: movieTitle, language: movieJSON["language"].stringValue, ageRating: movieJSON["ageRating"].stringValue, duration: movieJSON["duration"].intValue)
+                moviesDataModel.moviesArray.append(movie)
+                i += 1
+                
+                print(movie.title)
+            } else {
+                break
+            }
+        }
     }
     
 }

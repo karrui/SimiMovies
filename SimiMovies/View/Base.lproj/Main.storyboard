@@ -17,20 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngs-cL-JIf">
-                                <rect key="frame" x="90" y="392" width="195" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="DatePicker"/>
-                                <connections>
-                                    <action selector="datePickerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dcn-Fg-kqw"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UU-Q9-3Tt">
                                 <rect key="frame" x="90" y="448" width="195" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="MoviePicker"/>
+                                <connections>
+                                    <action selector="moviePickerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BzA-c7-CND"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahf-Lv-lIW">
                                 <rect key="frame" x="90" y="504" width="195" height="48"/>
@@ -51,7 +45,6 @@
                     <navigationItem key="navigationItem" id="w1t-yd-mwr"/>
                     <connections>
                         <outlet property="cinemaPicker" destination="Ahf-Lv-lIW" id="ZfQ-Zl-71y"/>
-                        <outlet property="datePicker" destination="ngs-cL-JIf" id="ZaX-DT-Yu4"/>
                         <outlet property="moviePicker" destination="8UU-Q9-3Tt" id="Oqg-qI-rOu"/>
                     </connections>
                 </viewController>
@@ -62,10 +55,9 @@
         <!--Navigation Controller-->
         <scene sceneID="P6J-BZ-z2C">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Ah-RZ-jMG" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="2Ah-RZ-jMG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="khj-w1-HGa">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		033CE17F8BCC4BA8CC37B437 /* Pods_SimiMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 259983BBE8FBF6260131414F /* Pods_SimiMoviesTests.framework */; };
 		708F67F501866D85ECD2B7E4 /* Pods_SimiMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C996A70BD000036A8C1D5D5E /* Pods_SimiMovies.framework */; };
+		9754D7941FF4B358009A8DFD /* MoviesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9754D7931FF4B358009A8DFD /* MoviesDataModel.swift */; };
+		9754D7961FF4B83D009A8DFD /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9754D7951FF4B83D009A8DFD /* Movie.swift */; };
 		97EFFC0B1FF385EB00F67786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFFC0A1FF385EB00F67786 /* AppDelegate.swift */; };
 		97EFFC0D1FF385EB00F67786 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFFC0C1FF385EB00F67786 /* MainViewController.swift */; };
 		97EFFC101FF385EB00F67786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EFFC0E1FF385EB00F67786 /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		536B0CE4BEF71E1ACD304013 /* Pods-SimiMoviesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimiMoviesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimiMoviesUITests/Pods-SimiMoviesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6450DE000EB33FF5B477F780 /* Pods-SimiMoviesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimiMoviesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimiMoviesUITests/Pods-SimiMoviesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7F14C8E9BA52ECAD21BC26C0 /* Pods-SimiMoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimiMoviesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimiMoviesTests/Pods-SimiMoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9754D7931FF4B358009A8DFD /* MoviesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDataModel.swift; sourceTree = "<group>"; };
+		9754D7951FF4B83D009A8DFD /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		97EFFC071FF385EB00F67786 /* SimiMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimiMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EFFC0A1FF385EB00F67786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97EFFC0C1FF385EB00F67786 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -130,8 +134,8 @@
 				97EFFC3C1FF39A3200F67786 /* Controller */,
 				97EFFC3B1FF39A2E00F67786 /* View */,
 				97EFFC3A1FF39A2600F67786 /* Model */,
-				97EFFC111FF385EB00F67786 /* Assets.xcassets */,
 				97EFFC161FF385EB00F67786 /* Info.plist */,
+				97EFFC111FF385EB00F67786 /* Assets.xcassets */,
 			);
 			path = SimiMovies;
 			sourceTree = "<group>";
@@ -157,6 +161,8 @@
 		97EFFC3A1FF39A2600F67786 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9754D7931FF4B358009A8DFD /* MoviesDataModel.swift */,
+				9754D7951FF4B83D009A8DFD /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,11 +374,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SimiMovies/Pods-SimiMovies-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/McPicker/McPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/McPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -482,7 +492,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9754D7941FF4B358009A8DFD /* MoviesDataModel.swift in Sources */,
 				97EFFC0D1FF385EB00F67786 /* MainViewController.swift in Sources */,
+				9754D7961FF4B83D009A8DFD /* Movie.swift in Sources */,
 				97EFFC0B1FF385EB00F67786 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,7 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FH2EF8NL6A;
+				DEVELOPMENT_TEAM = Y6JG58R48H;
 				INFOPLIST_FILE = SimiMovies/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -668,7 +680,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FH2EF8NL6A;
+				DEVELOPMENT_TEAM = Y6JG58R48H;
 				INFOPLIST_FILE = SimiMovies/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
