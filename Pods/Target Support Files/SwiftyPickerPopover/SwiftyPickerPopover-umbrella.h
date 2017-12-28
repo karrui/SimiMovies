@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double McPickerVersionNumber;
-FOUNDATION_EXPORT const unsigned char McPickerVersionString[];
+FOUNDATION_EXPORT double SwiftyPickerPopoverVersionNumber;
+FOUNDATION_EXPORT const unsigned char SwiftyPickerPopoverVersionString[];
 
