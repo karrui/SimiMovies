@@ -13,7 +13,7 @@ import SwiftyPickerPopover
 
 // Global variable
 var moviesDataModel = MoviesDataModel()
-var showtimesDataModel = ShowtimeDataModel()
+var showtimeDataModel = ShowtimeDataModel()
 
 class ViewController: UIViewController {
     
@@ -25,6 +25,8 @@ class ViewController: UIViewController {
     // Instance variables
     var selectedMovieTitle: String = ""
     var selectedCinemaTitle: String = ""
+    var selectedMovieID: Int = 0
+    var selectedCinemaID: Int = 0
     
     @IBOutlet weak var moviePicker: UIButton!
     @IBOutlet weak var cinemaPicker: UIButton!
@@ -45,14 +47,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func preparePickerArray(originalArray: [String]) -> [String] {
+        var newArray = ["Select one if you want"] + originalArray
+        while newArray.contains("") {
+            if let itemToRemoveIndex = newArray.index(of: "") {
+                newArray.remove(at: itemToRemoveIndex)
+            }
+        }
+        
+        return newArray
+    }
     
     @IBAction func moviePickerPressed(_ sender: Any) {
-        let p = StringPickerPopover(title: "Choose a movie!", choices: moviesDataModel.movieTitleArray)
+        let p = StringPickerPopover(title: "Choose a movie!", choices: preparePickerArray(originalArray: moviesDataModel.movieTitleArray))
             .setDoneButton(
                 action: {  popover, selectedRow, selectedString in
                     self.moviePicker.setTitle(selectedString, for: .normal)
                     self.selectedMovieTitle = selectedString
-                    self.goButton.isEnabled = true
+                    self.selectedMovieID = selectedRow
+                    if self.selectedCinemaID != 0 || self.selectedMovieID != 0 {
+                        self.goButton.isEnabled = true
+                    } else {
+                        self.goButton.isEnabled = false
+                    }
             })
             .setCancelButton(action: {_, _, _ in
                 print("cancel") })
@@ -60,12 +77,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cinemaPickerPressed(_ sender: Any) {
-        let p = StringPickerPopover(title: "Choose a cinema!", choices: moviesDataModel.cinemasArray)
+        let p = StringPickerPopover(title: "Choose a cinema!", choices: preparePickerArray(originalArray: moviesDataModel.cinemasArray))
             .setDoneButton(
                 action: {  popover, selectedRow, selectedString in
                     self.cinemaPicker.setTitle(selectedString, for: .normal)
                     self.selectedCinemaTitle = selectedString
-                    self.goButton.isEnabled = true
+                    self.selectedCinemaID = selectedRow
+                    if self.selectedCinemaID != 0 || self.selectedMovieID != 0 {
+                        self.goButton.isEnabled = true
+                    } else {
+                        self.goButton.isEnabled = false
+                    }
             })
             .setCancelButton(action: {_, _, _ in
                 print("cancel") })
@@ -121,17 +143,45 @@ class ViewController: UIViewController {
                 let cinemaID = showtimeJSON["cinema_id"].intValue
                 let movieID = showtimeJSON["movie_id"].intValue
                 let datetime = showtimeJSON["datetime"].stringValue
-                showtimesDataModel.iCinemaJMovie[cinemaID][movieID].append(datetime)
-                showtimesDataModel.iMovieJCinema[movieID][cinemaID].append(datetime)
+                
+                let convertedDate = convertISODate(isoDate: datetime)
+                let convertedTime = convertISOTime(isoDate: datetime)
+                
+                let showtime = Showtime(movieTime: convertedTime, movieDate: convertedDate, movieID: movieID, cinemaID: cinemaID)
+                
+                showtimeDataModel.allShowTimes.append(showtime)
+                
                 i += 1
             } else {
                 break
             }
         }
+    }
+    
+    func convertISODate(isoDate: String) -> String {
+        let isoDateFormatter = DateFormatter()
+        isoDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let date = isoDateFormatter.date(from:isoDate)!
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.month, .day], from: date)
+        let finalDate = calendar.date(from:components)
         
-        for element in showtimesDataModel.iCinemaJMovie {
-            print(element)
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E, dd MMM"
+        return dateFormatter.string(from: finalDate!)
+    }
+    
+    func convertISOTime(isoDate: String) -> String {
+        let isoDateFormatter = DateFormatter()
+        isoDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        let date = isoDateFormatter.date(from:isoDate)!
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute], from: date)
+        let finalDate = calendar.date(from:components)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        return dateFormatter.string(from: finalDate!)
     }
     
     func updateCinemasData(json: JSON) {
@@ -140,7 +190,8 @@ class ViewController: UIViewController {
         while true {
             var cinemaJSON = json[i]
             if cinemaJSON != JSON.null {
-                moviesDataModel.cinemasArray.append(cinemaJSON["name"].stringValue)
+                let cinemaName = cinemaJSON["name"].stringValue
+                moviesDataModel.cinemasArray.append(cinemaName)
                 i += 1
             } else {
                 break
@@ -164,6 +215,53 @@ class ViewController: UIViewController {
             }
         }
         moviesDataModel.addTitlesToArray()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResultsScreen" {
+            let destinationVC = segue.destination as! ResultsViewController
+            destinationVC.cinemaIDPassedOver = selectedCinemaID
+            destinationVC.cinemaTitlePassedOver = selectedCinemaTitle
+            destinationVC.movieIDPassedOver = selectedMovieID
+            destinationVC.movieTitlePassedOver = selectedMovieTitle
+            
+            // a movie is selected but no cinema selected
+            if selectedMovieID != 0 && selectedCinemaID == 0 {
+                var newArray = [Showtime]()
+                for element in showtimeDataModel.allShowTimes {
+                    if element.movieID == selectedMovieID {
+                        newArray.append(element)
+                    }
+                }
+                destinationVC.arraySizePassedOver = newArray.count
+                destinationVC.resultsArray = newArray
+                destinationVC.typeSentOver = "10"
+            }
+            // no movie selected, cinema selected
+            else if selectedMovieID == 0 && selectedCinemaID != 0 {
+                var newArray = [Showtime]()
+                for element in showtimeDataModel.allShowTimes {
+                    if element.cinemaID == selectedCinemaID {
+                        newArray.append(element)
+                    }
+                }
+                destinationVC.arraySizePassedOver = newArray.count
+                destinationVC.resultsArray = newArray
+                destinationVC.typeSentOver = "01"
+            }
+            // both selected
+            else {
+                var newArray = [Showtime]()
+                for element in showtimeDataModel.allShowTimes {
+                    if element.cinemaID == selectedCinemaID && element.movieID == selectedMovieID {
+                        newArray.append(element)
+                    }
+                }
+                destinationVC.arraySizePassedOver = newArray.count
+                destinationVC.resultsArray = newArray
+                destinationVC.typeSentOver = "11"
+            }
+        }
     }
     
     @IBAction func goButtonPressed(_ sender: Any) {

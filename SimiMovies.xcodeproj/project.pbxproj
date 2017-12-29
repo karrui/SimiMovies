@@ -15,6 +15,7 @@
 		9754D7A11FF4F1A7009A8DFD /* CustomResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9754D79F1FF4F1A7009A8DFD /* CustomResultsCell.swift */; };
 		9754D7A21FF4F1A7009A8DFD /* CustomResultsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9754D7A01FF4F1A7009A8DFD /* CustomResultsCell.xib */; };
 		9754D7A51FF4FBB3009A8DFD /* ShowtimeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9754D7A41FF4FBB3009A8DFD /* ShowtimeDataModel.swift */; };
+		9754D7A71FF54B7B009A8DFD /* Showtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9754D7A61FF54B7B009A8DFD /* Showtime.swift */; };
 		97EFFC0B1FF385EB00F67786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFFC0A1FF385EB00F67786 /* AppDelegate.swift */; };
 		97EFFC0D1FF385EB00F67786 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EFFC0C1FF385EB00F67786 /* MainViewController.swift */; };
 		97EFFC101FF385EB00F67786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97EFFC0E1FF385EB00F67786 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		9754D79F1FF4F1A7009A8DFD /* CustomResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomResultsCell.swift; sourceTree = "<group>"; };
 		9754D7A01FF4F1A7009A8DFD /* CustomResultsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomResultsCell.xib; sourceTree = "<group>"; };
 		9754D7A41FF4FBB3009A8DFD /* ShowtimeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowtimeDataModel.swift; sourceTree = "<group>"; };
+		9754D7A61FF54B7B009A8DFD /* Showtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Showtime.swift; sourceTree = "<group>"; };
 		97EFFC071FF385EB00F67786 /* SimiMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimiMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97EFFC0A1FF385EB00F67786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97EFFC0C1FF385EB00F67786 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				9754D7931FF4B358009A8DFD /* MoviesDataModel.swift */,
 				9754D7951FF4B83D009A8DFD /* Movie.swift */,
 				9754D7A41FF4FBB3009A8DFD /* ShowtimeDataModel.swift */,
+				9754D7A61FF54B7B009A8DFD /* Showtime.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,12 +399,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SimiMovies/Pods-SimiMovies-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/LBTAComponents/LBTAComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyPickerPopover/SwiftyPickerPopover.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBTAComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyPickerPopover.framework",
 			);
@@ -514,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9754D7A51FF4FBB3009A8DFD /* ShowtimeDataModel.swift in Sources */,
+				9754D7A71FF54B7B009A8DFD /* Showtime.swift in Sources */,
 				9754D7941FF4B358009A8DFD /* MoviesDataModel.swift in Sources */,
 				97EFFC0D1FF385EB00F67786 /* MainViewController.swift in Sources */,
 				9754D7961FF4B83D009A8DFD /* Movie.swift in Sources */,

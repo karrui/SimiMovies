@@ -9,6 +9,6 @@
 import Foundation
 
 class ShowtimeDataModel {
-    var iCinemaJMovie = [[String]]()
-    var iMovieJCinema = [[String]]()
+    var allShowTimes = [Showtime]()
 }
+
